@@ -1,0 +1,55 @@
+<%= form_with(model: movie, local: true , multipart: true, class: "form-horizontal") do |form| %>
+  <% if movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="col-md-12 col-md-offset-1">
+  <div class="field">
+    <%= form.label :title %>
+    <br>
+    <%= form.text_field :title, id: :movie_title, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <br>
+    <%= form.text_area :description, id: :movie_description, cols: "20", rows: "10", class: "form-control form-area" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :movie_length %>
+    <%= form.text_field :movie_length, id: :movie_movie_length , class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direction %>
+    <%= form.text_field :direction, id: :movie_direction, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url, id: :movie_url, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ration %>
+    <%= form.text_field :ration, id: :movie_ration, class: "form-control" %>
+  </div>
+   <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :image, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Add The New Movie", class: "btn special-btn" %>
+  </div>
+ </div>
+ 
+<% end %>

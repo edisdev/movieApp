@@ -1,0 +1,84 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+    <div class="col-md-4">
+      <%= image_tag @movie.image.url(:medium) %>
+      <hr>
+      <div style="float: left;" class="star-rating" data-score=<%= @avg_reviews %> > </div>
+      <em style="margin-left:10%"> <%= @avg_reviews %> </em>
+      <em style="margin-left: 10%"><%= @reviews.length %> Comments </em>
+    <div class="clear"></div>
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td><strong>Title:</strong></td>
+              <td><%= @movie.title %></td>
+            </tr>
+            <tr>
+            <td> <strong>Description:</strong> </td>
+            <td> <%= @movie.description %> </td>
+            </tr>
+         <tr>
+         <td><strong>Movie length:</strong></td>
+         <td> <%= @movie.movie_length %></td>
+         </tr>
+         <tr>
+           <td><strong>Direction:</strong></td>
+           <td> <%= @movie.direction %></td>
+         </tr>
+         <tr>
+           <td><strong>Ration:</strong></td>
+           <td><%= @movie.ration %></td>
+         </tr>
+          </tbody>
+        </table>
+        <%= link_to 'Write Comment' , new_movie_review_path(@movie),  class: "btn btn-danger"   %>
+      </div>
+      </div>
+      <div class="col-md-7 col-md-offset-1">
+        <h1 class="review_title"><%= @movie.title %></h1>
+        <p><%= @movie.description %></p>
+
+        <% if @reviews.blank? %>
+          <h3>No comment just yet , Would you like to add the first comment !</h3>
+         <p> <%= link_to 'Write Comment' , new_movie_review_path(@movie), class: "btn btn-danger"  %></p>
+        <% else %>
+         <%  @reviews.each do |review|  %>
+             
+             <div class="reviews">
+               <div class="star-rating" data-score=<%= review.raiting %> ></div>
+               <br>
+                <p><b><%= review.comment %></b></p>
+                 <em> User : <%= review.user.email %> </em>
+                  <% if user_signed_in? &&  current_user.id== review.user.id %>
+
+                <p> <%= link_to 'Edit to Comment' , edit_movie_review_path(@movie,review), class: "btn btn-warning"  %></p>
+                <p> <%= link_to 'Delete to Comment' ,  movie_review_path(@movie,review),  method: :delete , data: { :confirm => "Are you sure want to delete the comment ? "},class: "btn btn-danger"  %></p>
+                   <% end %>
+             </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col-md-12">
+        <%= video_player @movie.url %>
+  <% if user_signed_in? && current_user.id== @movie.user.id %>
+  <%= link_to 'Edit', edit_movie_path(@movie) , class: "btn btn-primary" %> |
+  <%= link_to 'Delete', @movie , method: :delete , data: { :confirm => "Are you sure want to delete the moive ? "} ,class: "btn btn-danger" %> |
+  <% end %>
+  <%= link_to 'Back', movies_path , class: "btn btn-success"  %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  
+  $('.star-rating').raty({
+   path:'/assets/',
+   readOnly: true,
+   score: function(){
+      return $(this).attr('data-score');
+   }
+  })
+</script>

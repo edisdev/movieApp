@@ -1,0 +1,172 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+body {
+  background: #33353e;
+}
+
+.review-title {
+  margin: 0 0 20px 0;
+}
+
+
+.reviews {
+  padding: 15px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.reviews .star-rating {
+  padding-bottom: 8px;
+}
+
+
+a:visited {
+  color: #fff;
+}
+
+.clear {
+  clear: both;
+  margin-bottom: 10%;
+}
+
+
+.navbar-default {
+  background-color: #1c1e27;
+  border-radius: 0;
+  border: navajowhite;
+  border-bottom: 3px solid #111;
+  box-shadow: 2px 5px 10px #111;
+  color: #fff !important;
+  padding: 10px;
+}
+
+
+.navbar li {
+  margin-left: 7px;
+}
+
+
+.navbar li a {
+  color: #ffbb00 !important;
+  border: 1px solid #ffbb00;
+  border-radius: 10px;
+}
+
+
+
+.navbar li a:hover, .navbar li a :focus{
+  color: #ddf !important;
+  border: 1px solid #ddf;
+}
+
+
+.navbar-default .navbar-brand {
+      color: #ffbb00;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar-default button{
+  color: #111;
+  background: #ffbb00;
+border: none;
+text-align: center;
+margin-left: 0
+}
+
+.navbar-default button:hover, .navbar-default button:focus{
+background: #111;
+color: #ddf;
+border: 1px solid #ddf;
+}
+
+.navbar-default .navbar-brand:hover #movie-icon, .navbar-default .navbar-brand:focus #movie-icon{
+  color: #ddf;
+ border: 2px solid #ddf
+}
+
+
+.form-control {
+     width: 82%;
+    margin-bottom: 2%;
+    height: 44px;
+  }  
+
+.backlink {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 7px;
+    /* margin-top: 2%; */
+    /* margin-bottom: 2%; */
+    display: inline-block;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    color: #fff;
+}
+
+.backlink:hover,.backlink:focus{
+color: #ddf;
+border: 2px solid #ddf;
+padding: 9px;
+text-decoration: none;
+}
+
+.formdiv {
+    background: #1c1e27;
+    color: #ffbb00;
+    border: 1px solid;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 10px 10px 10px #111;
+}
+
+.form-area{
+height: auto;
+}
+
+.form-title{
+border:2px solid #ffbb00;
+border-radius: 50%;
+width: 81%;
+}
+
+.h1-title{
+text-align: center;
+}
+
+.special-btn{
+  background: #ffbb00;
+  color: #fff;
+  height: 44px;
+}
+
+.special-btn:hover{
+  background: #b92b24;
+  color: #fff;
+}
+
+input[name=search]
+{
+  margin-bottom: 0;
+  height: 35px;
+  background: #1c1e27;
+  color: #ffbb00;
+  border: 1px solid #ffbb00;
+  opacity: .7;
+}
+
+input[name=search]:focus{
+    -webkit-box-shadow: inset 2 1px 1px #ffbb00;
+    box-shadow: inset 2 1px 1px #ffbb00;  
+    border: 1px solid #ffbb00;
+    opacity:2;
+}
+
+#movie-icon{
+border-radius: 50%;
+    font-size: 28px;
+    border: 2px solid #ffbb00;
+    padding: 10px;
+    display: inline;
+}

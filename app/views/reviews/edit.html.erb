@@ -1,0 +1,20 @@
+<div class="formdiv">
+<div class="container">
+<div class="h1-title">
+
+<h1>Editing Review</h1>
+
+</div>
+
+<hr class="form-title">
+
+<%= render 'form', review: @review %>
+
+<div class="col-md-12">
+
+<%= link_to 'Back', movie_path(@review.movie.id)  %>
+
+</div>
+
+</div>
+</div>
