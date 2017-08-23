@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby Version: 2.2.6
+Rails Version : 5.13
 
-Things you may want to cover:
+And You need to use to the app localhost imagemagick package for paperclip gem . ( paper gem => https://github.com/thoughtbot/paperclip )
 
-* Ruby version
+Then 
 
-* System dependencies
+git clone https://github.com/haticeedis/movieApp.git
 
-* Configuration
+Then
 
-* Database creation
+cd movieApp
 
-* Database initialization
+Then 
 
-* How to run the test suite
+bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+Then 
 
-* Deployment instructions
+rake:db migrate
 
-* ...
+then 
+
+rails s
+
+anddd
+
+Got to  localhost:3000/
+
+Run App ! :)
