@@ -27,6 +27,6 @@ rails s
 
 anddd
 
-Got to  localhost:3000/
+Got to http://localhost:3000/
 
 Run App ! :)
